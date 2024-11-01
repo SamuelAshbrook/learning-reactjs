@@ -7,6 +7,11 @@ function Header({ title }) {
 
 function HomePage() {
     const names = ['Sam', 'Harry', 'Theo', 'Jacob'];
+    const [likes, setLikes] = React.useState(0);
+
+    function handleClick() {
+        setLikes(likes + 1);
+    }
 
     return (
         <div>
@@ -17,6 +22,7 @@ function HomePage() {
                     <li key={name}>{name}</li>
                 ))};
             </ul>
+            <button onClick={handleClick}>Like ({likes})</button>
         </div>
     );
 }
